@@ -1,4 +1,0 @@
-C:\Users\rfuszenecker\dev\fuszenecker.github.io\publish\publish\web.config
-C:\Users\rfuszenecker\dev\fuszenecker.github.io\publish\publish\wwwroot\sample-data\weather.json
-C:\Users\rfuszenecker\dev\fuszenecker.github.io\publish\publish\wwwroot\_framework\blazor.boot.json
-C:\Users\rfuszenecker\dev\fuszenecker.github.io\publish\web.config
