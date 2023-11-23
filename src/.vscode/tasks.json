@@ -25,6 +25,9 @@
 				"-o",
 				"${workspaceFolder}/../publish"
 			],
+			"problemMatcher": [
+				"$msCompile"
+			]
 		}
 	]
 }

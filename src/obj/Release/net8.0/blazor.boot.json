@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "GithubIo",
   "resources": {
-    "hash": "sha256-8J4hfUJherkFUDTVK7XfgpuJaWytRrxxYdel7ZncTCU=",
+    "hash": "sha256-7dOpu9EEgZFptBoEw8TATd3joDGkBC3mjqjA4n0kcmM=",
     "jsModuleNative": {
       "dotnet.native.8.0.0.rxafu69klb.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
@@ -211,10 +211,10 @@
       "mscorlib.wasm": "sha256-cDuLeL3OCtVtiid/dyex1MVgbuzDSRwZxKzuP2Dp4mg=",
       "netstandard.wasm": "sha256-A0h86SDieTMoU/wU2JTszWCsUmMuguDcbap0b0BzsmI=",
       "System.Private.CoreLib.wasm": "sha256-/0DNIm/T0C07X7Tuz5uR8JvVCoAfEE2MnfPUSjyS9xc=",
-      "GithubIo.wasm": "sha256-3XnbibeaYPqrhkpC10mbLEdasPS2D8t9rZhVciGVDUQ="
+      "GithubIo.wasm": "sha256-k9yXsOUChw0fJbBaHBDUdyTrsDcMvp+T67HM833lzaU="
     },
     "pdb": {
-      "GithubIo.pdb": "sha256-1NUKzUhUOJSU+AZfK4J+DeeTirkfQh9fwhw1RW1nB7k="
+      "GithubIo.pdb": "sha256-R8DmnLDxcVW45tRKXLaYZhztqn63Idvh723VWheCbNk="
     }
   },
   "cacheBootResources": true,
