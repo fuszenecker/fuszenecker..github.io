@@ -67,11 +67,11 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: github-pages
-        path: github-pages
+        path: github-pages-artifact
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
       with:
-        path: 'github-pages'
+        path: 'github-pages-artifact'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2     
