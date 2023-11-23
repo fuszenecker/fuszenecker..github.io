@@ -1042,3 +1042,6 @@ C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\obj\Release\net8.0\GithubIo.
 C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\obj\Release\net8.0\refint\GithubIo.dll
 C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\obj\Release\net8.0\GithubIo.pdb
 C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\obj\Release\net8.0\ref\GithubIo.dll
+C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\bin\Release\net8.0\publish\web.config
+C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\bin\Release\net8.0\publish\wwwroot\sample-data\weather.json
+C:\Users\rfuszenecker\dev\fuszenecker.github.io\src\bin\Release\net8.0\publish\wwwroot\_framework\blazor.boot.json

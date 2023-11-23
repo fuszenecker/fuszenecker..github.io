@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GithubIo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a75bb3cc29f94cf296bac1220e9c51ddc0fea3f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+919c8579d4080daa469ea7b5e25a702e24b5868f")]
 [assembly: System.Reflection.AssemblyProductAttribute("GithubIo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GithubIo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
