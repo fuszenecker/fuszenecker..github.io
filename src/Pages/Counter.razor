@@ -1,17 +1,72 @@
 ﻿@page "/counter"
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>Kattintó</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom="true">Counter</MudText>
-<MudText Class="mb-4">Current count: @currentCount</MudText>
+<MudText Typo="Typo.h3" GutterBottom="true">Kattintó</MudText>
+
+<MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Left">
+    @foreach (var item in timeline)
+    {
+        if (item == timeline.Last())
+        {
+            <MudTimelineItem Color="Color.Primary" IsLast="true">
+                @item.Title
+            </MudTimelineItem>
+            break;
+        }
+        else
+        {
+            <MudTimelineItem>
+                @item.Title
+            </MudTimelineItem>
+        }
+    }
+
+</MudTimeline>
+
+<MudText Class="mb-4 mt-4">Kattintások száma: @currentCount</MudText>
 <MudButton Color="Color.Primary" Variant="Variant.Filled" @onclick="IncrementCount">Click me</MudButton>
 
 
 @code {
+    record TimeLimeItem {
+        public string Title { get; init; }
+    }
+
     private int currentCount = 0;
+    private List<TimeLimeItem> timeline = new List<TimeLimeItem>();
+
+    protected override void OnInitialized()
+    {
+        timeline.Add(new TimeLimeItem { Title = "START" });
+    }
 
     private void IncrementCount()
     {
         currentCount++;
+
+        switch (currentCount)
+        {
+            case 25: timeline.Add(new TimeLimeItem { Title = "Beginner" }); break;
+            case 50: timeline.Add(new TimeLimeItem { Title = "Strong beginner" }); break;
+            case 100: timeline.Add(new TimeLimeItem { Title = "Very strong beginner" }); break;
+            case 200: timeline.Add(new TimeLimeItem { Title = "Pro" }); break;
+            case 250: timeline.Add(new TimeLimeItem { Title = "Strong pro" }); break;
+            case 375: timeline.Add(new TimeLimeItem { Title = "Very strong pro" }); break;
+            case 500: timeline.Add(new TimeLimeItem { Title = "Nice" }); break;
+            case 750: timeline.Add(new TimeLimeItem { Title = "Nice +" }); break;
+            case 1000: timeline.Add(new TimeLimeItem { Title = "Very nice" }); break;
+            case 1500: timeline.Add(new TimeLimeItem { Title = "Very big nice" }); break;
+            case 2000: timeline.Add(new TimeLimeItem { Title = "Hard try" }); break;
+            case 2500: timeline.Add(new TimeLimeItem { Title = "Try hard" }); break;
+            case 5000: timeline.Add(new TimeLimeItem { Title = "Nice tryhard" }); break;
+            case 7500: timeline.Add(new TimeLimeItem { Title = "Very nice tryhard" }); break;
+            case 10000: timeline.Add(new TimeLimeItem { Title = "Extreme" }); break;
+            case 25000: timeline.Add(new TimeLimeItem { Title = "MEGA" }); break;
+            case 50000: timeline.Add(new TimeLimeItem { Title = "OMEGA" }); break;
+            case 100000: timeline.Add(new TimeLimeItem { Title = "ULTRA" }); break;
+            case 250000: timeline.Add(new TimeLimeItem { Title = "ULTIMATE" }); break;
+            case 500000: timeline.Add(new TimeLimeItem { Title = "GOD" }); break;
+        }
     }
 }
