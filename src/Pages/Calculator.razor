@@ -5,7 +5,7 @@
 
 <MudText Typo="Typo.h3" GutterBottom="true">Kiszámoló</MudText>
 
-<MudCarousel @ref="carousel" Class="mud-width-full" Style="height:400px;" ShowArrows="true"
+<MudCarousel @ref="carousel" Class="mud-width-full" Style="height:350px;" ShowArrows="true"
     ShowBullets="true" EnableSwipeGesture="true" AutoCycle="false" TData="object">
 
 @for (int i = 0; i < questions.Count; i++) {
@@ -58,27 +58,123 @@
     {
         questions.Add(new CalculatorItem
         {
-            Title = "Összeadás",
-            Question = "2 + 2",
+            Title = "1. kérdés",
+            Question = "18 + 22 =",
+            ExpectedAnswer = 40
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "2. kérdés",
+            Question = "39 + 11 =",
+            ExpectedAnswer = 50
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "3. kérdés",
+            Question = "16 + 24 =",
+            ExpectedAnswer = 40
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "4. kérdés",
+            Question = "39 + 39 =",
+            ExpectedAnswer = 78
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "5. kérdés",
+            Question = "47 + 32 =",
+            ExpectedAnswer = 79
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "6. kérdés",
+            Question = "16 – 8 =",
+            ExpectedAnswer = 8
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "7. kérdés",
+            Question = "39 – 6 – 3 =",
+            ExpectedAnswer = 30
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "8. kérdés",
+            Question = "47 – 27 =",
+            ExpectedAnswer = 20
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "9. kérdés",
+            Question = "63 – 18 =",
+            ExpectedAnswer = 45
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "10. kérdés",
+            Question = "24 : 4 =",
+            ExpectedAnswer = 6
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "11. kérdés",
+            Question = "6 · 6 =",
+            ExpectedAnswer = 36
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "12. kérdés",
+            Question = "9 · 9 =",
+            ExpectedAnswer = 81
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "13. kérdés",
+            Question = "7 · 4 =",
+            ExpectedAnswer = 28
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "14. kérdés",
+            Question = "8 · 6 =",
+            ExpectedAnswer = 48
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "15. kérdés",
+            Question = "5 · 5 · 4 =",
+            ExpectedAnswer = 100
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "16. kérdés",
+            Question = "18 : 6 =",
+            ExpectedAnswer = 3
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "17. kérdés",
+            Question = "96 : 8 =",
+            ExpectedAnswer = 12
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "18. kérdés",
+            Question = "16 : 4 =",
             ExpectedAnswer = 4
         });
         questions.Add(new CalculatorItem
         {
-            Title = "Kivonás",
-            Question = "2 - 2",
-            ExpectedAnswer = 0
+            Title = "19. kérdés",
+            Question = "95 : 5 =",
+            ExpectedAnswer = 19
         });
         questions.Add(new CalculatorItem
         {
-            Title = "Szorzás",
-            Question = "2 * 2",
-            ExpectedAnswer = 4
-        });
-        questions.Add(new CalculatorItem
-        {
-            Title = "Osztás",
-            Question = "2 / 2",
-            ExpectedAnswer = 1
+            Title = "20. kérdés",
+            Question = "94 – 64 + 8 – 32 + 4 =",
+            ExpectedAnswer = 10
         });
     }
 
