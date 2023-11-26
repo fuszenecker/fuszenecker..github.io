@@ -1,0 +1,105 @@
+﻿@page "/calculator"
+@inject IDialogService DialogService
+
+<PageTitle>Kiszámoló</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Kiszámoló</MudText>
+
+<MudCarousel @ref="carousel" Class="mud-width-full" Style="height:400px;" ShowArrows="true"
+    ShowBullets="true" EnableSwipeGesture="true" AutoCycle="false" TData="object">
+
+@for (int i = 0; i < questions.Count; i++) {
+    var j = i;
+    var question = questions[j];
+    var isPrimary = j % 2 == 0;
+    var isLast = j == questions.Count - 1;
+    var buttonText = isLast ? "Kész, lássuk az eredményt" : "Kész, jöhet a következő!";
+
+    <MudCarouselItem Transition="Transition.Slide" Color="isPrimary ? Color.Primary : Color.Secondary">
+        <div class="d-flex" style="justify-content: center; height: '90%'; width: '100%';">
+            <MudCard Class="ma-5 object-fill">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h6">@question.Title</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Material.Filled.QuestionMark" Color="Color.Tertiary" />
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudText Typo="Typo.body1">@question.Question</MudText>
+                    <MudNumericField Class="mt-5" @bind-Value="@question.Answer" Label="Válasz" HideSpinButtons="true" />
+                </MudCardContent>
+                <MudCardActions>
+                    <MudButton Variant="Variant.Text" Color="Color.Primary"
+                        OnClick="() => NextQuestion(j)">@buttonText</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </div>
+    </MudCarouselItem>
+}
+</MudCarousel>
+
+@code {
+    record CalculatorItem {
+        public string? Title { get; init; }
+
+        public string? Question { get; init; }
+
+        public decimal? Answer { get; set; }
+
+        public decimal ExpectedAnswer { get; init; }
+    }
+
+    private MudCarousel<object>? carousel;
+    private List<CalculatorItem> questions = new List<CalculatorItem>();
+
+    protected override void OnInitialized()
+    {
+        questions.Add(new CalculatorItem
+        {
+            Title = "Összeadás",
+            Question = "2 + 2",
+            ExpectedAnswer = 4
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "Kivonás",
+            Question = "2 - 2",
+            ExpectedAnswer = 0
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "Szorzás",
+            Question = "2 * 2",
+            ExpectedAnswer = 4
+        });
+        questions.Add(new CalculatorItem
+        {
+            Title = "Osztás",
+            Question = "2 / 2",
+            ExpectedAnswer = 1
+        });
+    }
+
+    private void NextQuestion(int question)
+    {
+        if (question == questions.Count - 1)
+        {
+            var correctAnswers = questions.Count(q => q.Answer == q.ExpectedAnswer);
+            var totalAnswers = questions.Count;
+            var percentage = (decimal)correctAnswers / totalAnswers * 100m;
+            var message = $"Helyes válaszok: {correctAnswers} / {totalAnswers} ({percentage}%)";
+
+            var parameters = new DialogParameters<ResultDialog>();
+            parameters.Add("Content", message);
+
+            var options = new DialogOptions { CloseOnEscapeKey = true };
+            DialogService.Show<ResultDialog>("Végeredmény", parameters, options);
+        }
+        else
+        {
+            carousel?.Next();
+        }
+    }
+}
